@@ -13,12 +13,15 @@ try:
     button = browser.find_element_by_css_selector("button.btn")
     button.click()
 
+    # переключаемся на окно confirm
     confirm = browser.switch_to.alert
     confirm.accept()
 
+    # Находим значение переменной X
     x_element = browser.find_element_by_id('input_value').text
     y = calc(x_element)
 
+    # Вводим значение функции от X
     imputX = browser.find_element_by_id('answer')
     imputX.send_keys(y)
 
